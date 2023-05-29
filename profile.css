@@ -1,0 +1,172 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  margin-right: 20px;
+}
+
+#links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+#links a:hover {
+  color: #ffc107;
+}
+
+#menu {
+  display: none;
+  cursor: pointer;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-right: 10px;
+}
+
+h1 {
+  font-size: 18px;
+  color: black;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+#results {
+  margin-top: 20px;
+}
+
+/* Media Query per il menu responsive */
+@media screen and (max-width: 768px) {
+  #links {
+    display: none;
+  }
+
+  #menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  #menu div {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+  }
+
+  #menu.open div:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  #menu.open div:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu.open div:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  .userInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .avatar {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+/* Stile per l'overlay */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+
+
+
+
+
+
+
+/* Stile per la sezione dei risultati */
+#results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: end;
+}
+
+/* Stile per ogni singolo risultato */
+.album {
+  width: calc(33.33% - 10px); /* Occupa un terzo della larghezza con uno spazio di 10px tra i risultati */
+  margin-bottom: 20px;
+}
+
+/* Stile per l'immagine del risultato */
+.album .img {
+  width: 100%;
+  height: auto;
+}
+
+/* Stile per il titolo del risultato */
+.album .title {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
